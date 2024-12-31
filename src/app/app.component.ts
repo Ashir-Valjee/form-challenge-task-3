@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FormComponent } from './components/form/form.component';
+import { Form2Component } from './components/form2/form2.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Form2Component],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+    <body>
+      <app-form2 />
+    </body>
   `,
-  styles: [],
+  styles: [
+    `
+      body {
+        color: rgb(60, 60, 59);
+        font-family: 'Calibri';
+      }
+    `,
+  ],
 })
 export class AppComponent {
   title = 'task3';

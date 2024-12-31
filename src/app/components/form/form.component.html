@@ -1,0 +1,56 @@
+<section id="page-container">
+  <form (submit)="onFormSubmit($event)" id="input-form" #form="ngForm">
+    <div class="inputContainer">
+      <label class="formLabel" for="formName">Name&#58;</label>
+      <input
+        name="formName"
+        id="form-name"
+        class="formInput"
+        type="text"
+        placeholder="Enter Your Name"
+        pattern="^[A-Za-z0-9!#$%& ]+$"
+        title="Only standard upper/lower case letters and printable characters are permitted"
+        required
+        aria-label="please enter your name"
+        [(ngModel)]="name"
+      />
+    </div>
+    <div class="inputContainer">
+      <label class="formLabel" for="form-email">Email&#58;</label>
+      <input
+        (input)="onInputTest()"
+        name="form-email"
+        id="form-email"
+        class="formInput"
+        type="email"
+        placeholder="Enter Your Email"
+        title="please enter a valid email address"
+        required
+        aria-label="please enter a valid email address"
+        #formEmail="ngModel"
+        [(ngModel)]="email"
+      />
+    </div>
+    <div class="inputContainer">
+      <label class="formLabel" for="form-card">Card&#58;</label>
+      <input
+        name="form-card"
+        id="form-card"
+        class="formInput"
+        type="text"
+        placeholder="Enter a Proxy Credit Card Number."
+        pattern="\d*"
+        oninput="this.value = this.value.replace(/\D/g, '')"
+        title="please enter a valid card number"
+        required
+        aria-label="please enter a valid card number"
+        #card="ngModel"
+        [(ngModel)]="cardNumber"
+      />
+    </div>
+
+    <button type="submit" id="submit-button" aria-label="submit form details">
+      Submit
+    </button>
+  </form>
+</section>
