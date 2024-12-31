@@ -14,16 +14,6 @@
         aria-label="please enter your name"
       />
     </div>
-    @if ( userForm.get('formName')?.invalid && userForm.get('formName')?.touched
-    ) {
-    <div>
-      @if (userForm.get('formName')?.errors?.['required']) {
-      <small>First name is required.</small>
-      } @if (userForm.get('formName')?.errors?.['minlength']) {
-      <small>Minimum 2 characters required.</small>
-      }
-    </div>
-    }
 
     <div class="inputContainer">
       <label class="formLabel" for="formEmail">Email&#58;</label>
@@ -53,19 +43,6 @@
         aria-label="please enter a valid card number"
       />
     </div>
-    <!-- @if (userForm.get('formCard')?.invalid && userForm.get('formCard')?.touched)
-    {
-    <div>
-      @if (userForm.get('formCard')?.errors?.['invalidCardNumber']) {
-      <small>Invalid card number.</small>
-      }
-    </div>
-    <div>
-      @if (userForm.get('formCard')?.errors?.['required']) {
-      <small>Card number is required.</small>
-      }
-    </div>
-    } -->
 
     <button type="submit" id="submit-button" aria-label="submit form details">
       Submit
